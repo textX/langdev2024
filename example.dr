@@ -1,0 +1,7 @@
+begin
+    move left 50
+    rotate 90
+    move forward 50
+    move up 20
+    flip forward
+end
