@@ -45,7 +45,7 @@ Metamodel and model validation via CLI
 
 ``` bash
 textx check drone.tx
-textx check example.dr --gramar drone.tx
+textx check example.dr --grammar drone.tx
 ```
 
 List registered generators
