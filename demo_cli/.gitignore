@@ -1,1 +1,5 @@
 venv/
+*.dot
+*.pu
+*.png
+.DS_Store

@@ -60,13 +60,13 @@ textx list-generators
 Visualize grammar
 
 ``` bash
-textx generate drone.tx --target plantuml
-dot -Tpng -O example.dot
+textx generate drone.tx --target plantuml --overwrite
+plantuml drone.pu
 ```
 
 Visualize model
 
 ``` bash
-textx generate drone.tx --target plantuml
-plantuml drone.pu
+textx generate --grammar drone.tx --target dot example.dr --overwrite
+dot -Tpng -O example.dot
 ```
