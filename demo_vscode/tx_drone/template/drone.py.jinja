@@ -1,0 +1,20 @@
+from djitellopy import tello
+
+drone = tello.Tello()
+
+drone.connect()
+drone.takeoff()
+
+{% for command in commands %}
+    {% if command.__class__.__name__ == 'MoveCommand' %}
+drone.move_{{command.direction}}({{command.centimeters}})
+    {% endif %}
+    {% if command.__class__.__name__ == 'RotateCommand' %}
+drone.rotate_{{'clockwise' if command.deg > 0 else 'counter_clockwise'}}({{command.deg}})
+    {% endif %}
+    {% if command.__class__.__name__ == 'FlipCommand' %}
+drone.flip_{{command.direction}}()
+    {% endif %}
+{% endfor %}
+
+drone.land()

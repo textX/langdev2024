@@ -1,0 +1,33 @@
+Program:
+  'begin'
+    commands*=Command
+  'end'
+;
+
+Command:
+  RotateCommand | FlipCommand | MoveCommand
+;
+
+RotateCommand:
+  'rotate' deg=INT
+;
+
+FlipCommand:
+  'flip' direction=FlipDirection
+;
+
+MoveCommand:
+  'move' direction=MoveDirection (centimeters=INT)?
+;
+
+FlipDirection:
+  "back"|"forward"|"left"|"right"
+;
+
+MoveDirection:
+  "back"|"forward"|"up"|"down"|"left"|"right"
+;
+
+Comment:
+  /\/\/.*$/
+;
